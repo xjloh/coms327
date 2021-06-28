@@ -1,0 +1,1 @@
+RULES: no capture single jumps TURN: black BOARD: "b"b"b"bb"b"b"b""b"b"r"b."."."."".".".".r"r"."r""r"r"r"rr"r"r"r" MOVES: h6->g5c3->d4g7->h6b2->c3h8->g7f6->h8f8->g7h8->f6d6->c5f6->h4c5->e3d2->f4b6->c5c7->b6

@@ -1,0 +1,1 @@
+. d4->b6 for red: score 0

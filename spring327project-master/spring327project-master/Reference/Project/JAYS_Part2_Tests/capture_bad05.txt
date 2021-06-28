@@ -1,0 +1,30 @@
+# Start of a game
+
+RULES:
+    capture      # Don’t enforce the rule that pieces must be captured
+    single jumps      # Allow multiple jumps
+
+TURN:
+    black
+BOARD:
+
+" | b | " | b | " | b | " | b
+---+---+---+---+---+---+---+---
+b | " | b | " | b | " | b | "
+---+---+---+---+---+---+---+---
+" | b | " | b | " | b | " | b
+---+---+---+---+---+---+---+---
+. | " | r | " | . | " | . | "
+---+---+---+---+---+---+---+---
+" | . | " | . | " | . | " | .
+---+---+---+---+---+---+---+---
+r | " | r | " | . | " | r | "
+---+---+---+---+---+---+---+---
+" | r | " | r | " | r | " | r
+---+---+---+---+---+---+---+---
+r | " | r | " | r | " | r | "
+
+MOVES:
+# b attempt to do non-capture move
+# should move to L
+d6->e5

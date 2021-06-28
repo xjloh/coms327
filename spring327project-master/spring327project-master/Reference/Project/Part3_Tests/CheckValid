@@ -1,0 +1,127 @@
+#!/bin/bash
+
+Usage()
+{
+  echo " "
+  echo "Usage: $0 [-I] test1 test2 ..."
+  echo " "
+  echo "Runs test files and compares output."
+  echo "Assumes rankmoves executable is in current working directory."
+  echo "If -I switch is given, produces instructor output files."
+  echo " "
+}
+
+#
+# Remove any trailing spaces.
+#
+# Arg1: input file, will be modified
+#
+stripTrailingSpaces()
+{
+  tr -d '\r' < $1 | sed 's/ *$//' > $1.new
+  mv -f $1.new $1
+}
+
+
+#
+# Grab extra args from input file
+#
+extraArgs()
+{
+  head -n 1 $1 | grep '^##' | tr -d '#'
+}
+
+#
+# Demonstrate a file
+# Arg1: what we're showing
+# Arg2: filename
+#
+demonstrateFile()
+{
+  printf "$1:\n"
+  echo "==========================================================================="
+  cat $2
+  echo "==========================================================================="
+}
+
+#
+# Arg1: input file
+# Arg2: output basename
+#
+buildOutputs()
+{
+  args=`extraArgs $1`
+  echo Running rankmoves $1 $args
+  ./rankmoves $1 $args > $2.out.brief.txt
+  ./rankmoves $1 $args -v > $2.out.verbose.txt
+  stripTrailingSpaces $2.out.brief.txt
+  stripTrailingSpaces $2.out.verbose.txt
+}
+
+#
+# Arg1: Input file
+#
+buildInstructor()
+{
+  bn=`basename -s .txt $1`
+  buildOutputs $1 $bn
+}
+
+#
+#
+# Arg1: instructor file
+# Arg2: student file
+compareFiles()
+{
+  delta=`diff -q $1 $2`
+  if [ -z "$delta" ]; then
+    printf "matches\n"
+  else
+    printf "different!\n"
+    demonstrateFile "Instructor output" $1
+    demonstrateFile "Student output" $2
+  fi
+}
+
+#
+# Arg1: input file
+#
+checkOutputs()
+{
+  bn=`basename -s .txt $1`
+
+  if [ ! -f $bn.out.brief.txt ]; then
+    return 0
+  fi
+  if [ ! -f $bn.out.verbose.txt ]; then
+    return 0
+  fi
+
+  buildOutputs $1 student
+
+  printf "    Checking brief output......: "
+  compareFiles $bn.out.brief.txt student.out.brief.txt
+
+  printf "    Checking verbose output....: "
+  compareFiles $bn.out.verbose.txt student.out.verbose.txt
+
+  rm student.out.brief.txt student.out.verbose.txt
+}
+
+
+if [ $# -lt 1 ]; then
+  Usage
+  exit 0
+fi
+
+if [ "$1" == "-I" ]; then
+  shift
+  for file; do
+    buildInstructor $file
+  done
+else
+  for file; do
+    checkOutputs $file
+  done
+fi
+

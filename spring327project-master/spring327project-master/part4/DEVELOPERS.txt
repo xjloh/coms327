@@ -1,0 +1,34 @@
+Features implemented by Xin Jun Loh
+
+Makefile
+- creates the new executable called game.
+
+void showInterface(char *filename)
+- displays the game interface along with the green box.
+
+void showConfig(Config config, int turn, int limit)
+- displays the foundation and waste of a game configuration.
+
+void setToBlank()
+- sets everything to blank with size of 80x25.
+
+
+Features implemented by Wei Xian Lim
+
+Config getAllSeedData(Config config_in)
+- input all the seed data into the config
+
+void randomize(int arr[], int n)
+- randomize the deck of cards
+
+int checkUncovered(cards in[20])
+- check for the amount of uncovered card in a tableau column
+
+Cards intToCard(int a) 
+- convert 0 to 51 as all the cards
+
+void saveFile(Config config_in, int turn, int limit)
+- given the config, turn and limit, create a file name output.txt consisting the game
+
+void showConfig(Config config, int turn, int limit)
+- displays the tableau of a game configuration

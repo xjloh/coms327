@@ -1,0 +1,3 @@
+Input file has 6 moves
+Processing 6 moves
+All moves are legal

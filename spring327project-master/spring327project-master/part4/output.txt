@@ -1,0 +1,21 @@
+RULES: 
+ turn 1 
+ unlimited
+
+FOUNDATION:
+ _c
+ _d
+ _h
+ _s
+
+TABLEAU:
+ Ts 9s Ad 2s 6c Kc |  Jc
+ 7s Td Js 5d Qc |  7h
+ 3h Tc Qd 2h |  Ks
+ 8c 6d 7d |  5c
+ Jh 4h |  4s
+ 3d |  As
+ |  Qs
+
+STOCK:
+| 4c 9d 8s Kd Kh 3s 2d 9c 6h 8d 5s 9h 3c Th 5h 7c Ac Jd 6s 2c 8h 4d Qh Ah 

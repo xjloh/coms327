@@ -1,0 +1,185 @@
+? b2->a3 for red:
+    ? c7->a5 for black:
+        ? a3->b4 for red:
+            . d4->b2 for black: score 2
+            . e7->d6 for black: score 1
+            . e7->f6 for black: score 1
+        . a3->b4 for red: score -2
+        ? c3->e5 for red:
+            . a5->b4 for black: score 0
+            . e7->d6 for black: score 0
+            . e7->f6 for black: score 0
+        . c3->e5 for red: score 0
+    . c7->a5 for black: score 0
+    ? d4->b2 for black:
+        ? a3->b4 for red:
+            . b2->a1 for black: score 2
+            . b2->c1 for black: score 2
+            . c7->a5 for black: score 2
+            . e7->d6 for black: score 1
+            . e7->f6 for black: score 1
+        . a3->b4 for red: score -2
+        ? b6->d8 for red:
+            . b2->a1 for black: score 0
+            . b2->c1 for black: score 0
+            . e7->d6 for black: score -1
+            . e7->f6 for black: score -1
+        . b6->d8 for red: score 0
+    . d4->b2 for black: score 0
+    ? e7->d6 for black:
+        ? a3->b4 for red:
+            . c7->a5 for black: score 1
+            . d4->b2 for black: score 1
+            . d6->c5 for black: score 0
+            . d6->e5 for black: score 0
+        . a3->b4 for red: score -1
+        ? b6->d8 for red:
+            . d4->b2 for black: score -1
+            . d6->c5 for black: score -2
+            . d6->e5 for black: score -2
+        . b6->d8 for red: score 1
+        ? c3->e5 for red:
+            . c7->a5 for black: score 0
+            . d6->f4 for black: score 0
+        . c3->e5 for red: score 0
+    . e7->d6 for black: score -1
+    ? e7->f6 for black:
+        ? a3->b4 for red:
+            . c7->a5 for black: score 1
+            . d4->b2 for black: score 1
+            . f6->e5 for black: score 0
+            . f6->g5 for black: score 0
+        . a3->b4 for red: score -1
+        ? b6->d8 for red:
+            . d4->b2 for black: score -1
+            . f6->e5 for black: score -2
+            . f6->g5 for black: score -2
+        . b6->d8 for red: score 1
+        ? c3->e5 for red:
+            . c7->a5 for black: score 0
+            . f6->d4 for black: score 0
+        . c3->e5 for red: score 0
+    . e7->f6 for black: score -1
+. b2->a3 for red: score 0
+? b6->d8 for red:
+    ? d4->e3 for black:
+        ? b2->a3 for red:
+            . e3->d2 for black: score -2
+            . e3->f2 for black: score -2
+            . e7->d6 for black: score -2
+            . e7->f6 for black: score -2
+        . b2->a3 for red: score 2
+        ? c3->b4 for red:
+            . e3->d2 for black: score -2
+            . e3->f2 for black: score -2
+            . e7->d6 for black: score -2
+            . e7->f6 for black: score -2
+        . c3->b4 for red: score 2
+        ? c3->d4 for red:
+            . e3->d2 for black: score -2
+            . e3->f2 for black: score -2
+            . e7->d6 for black: score -2
+            . e7->f6 for black: score -2
+        . c3->d4 for red: score 2
+        ? d8->f6 for red:
+            . e3->d2 for black: score -3
+            . e3->f2 for black: score -3
+        . d8->f6 for red: score 3
+    . d4->e3 for black: score -3
+    ? e7->d6 for black:
+        ? b2->a3 for red:
+            . d4->b2 for black: score -1
+            . d6->c5 for black: score -2
+            . d6->e5 for black: score -2
+        . b2->a3 for red: score 1
+        ? c3->e5 for red:
+            . d6->f4 for black: score -2
+        . c3->e5 for red: score 2
+        ? d8->c7 for red:
+            . d4->e3 for black: score -2
+            . d6->c5 for black: score -2
+            . d6->e5 for black: score -2
+        . d8->c7 for red: score 2
+        ? d8->e7 for red:
+            . d4->e3 for black: score -2
+            . d6->c5 for black: score -2
+            . d6->e5 for black: score -2
+        . d8->e7 for red: score 2
+    . e7->d6 for black: score -2
+    ? e7->f6 for black:
+        ? b2->a3 for red:
+            . d4->b2 for black: score -1
+            . f6->e5 for black: score -2
+            . f6->g5 for black: score -2
+        . b2->a3 for red: score 1
+        ? c3->e5 for red:
+            . f6->d4 for black: score -2
+        . c3->e5 for red: score 2
+        ? d8->c7 for red:
+            . d4->e3 for black: score -2
+            . f6->e5 for black: score -2
+            . f6->g5 for black: score -2
+        . d8->c7 for red: score 2
+        ? d8->e7 for red:
+            . d4->e3 for black: score -2
+            . f6->e5 for black: score -2
+            . f6->g5 for black: score -2
+        . d8->e7 for red: score 2
+    . e7->f6 for black: score -2
+. b6->d8 for red: score 2
+? c3->e5 for red:
+    ? c7->a5 for black:
+        ? b2->a3 for red:
+            . a5->b4 for black: score 0
+            . e7->d6 for black: score 0
+            . e7->f6 for black: score 0
+        . b2->a3 for red: score 0
+        ? b2->c3 for red:
+            . a5->b4 for black: score 0
+            . e7->d6 for black: score 0
+            . e7->f6 for black: score 0
+        . b2->c3 for red: score 0
+        ? e5->d6 for red:
+            . a5->b4 for black: score 0
+            . e7->c5 for black: score 1
+        . e5->d6 for red: score -1
+        ? e5->f6 for red:
+            . a5->b4 for black: score 0
+            . e7->g5 for black: score 1
+        . e5->f6 for red: score -1
+    . c7->a5 for black: score 0
+    ? e7->d6 for black:
+        ? b2->a3 for red:
+            . c7->a5 for black: score 0
+            . d6->f4 for black: score 0
+        . b2->a3 for red: score 0
+        ? b2->c3 for red:
+            . c7->a5 for black: score 0
+            . d6->f4 for black: score 0
+        . b2->c3 for red: score 0
+        ? b6->d8 for red:
+            . d6->f4 for black: score -2
+        . b6->d8 for red: score 2
+        ? e5->f6 for red:
+            . c7->a5 for black: score 0
+            . d6->c5 for black: score -1
+            . d6->e5 for black: score -1
+        . e5->f6 for red: score 0
+    . e7->d6 for black: score -2
+    ? e7->f6 for black:
+        ? b2->a3 for red:
+            . c7->a5 for black: score 0
+            . f6->d4 for black: score 0
+        . b2->a3 for red: score 0
+        ? b2->c3 for red:
+            . c7->a5 for black: score 0
+            . f6->d4 for black: score 0
+        . b2->c3 for red: score 0
+        ? b6->d8 for red:
+            . f6->d4 for black: score -2
+        . b6->d8 for red: score 2
+        ? e5->g7 for red:
+            . c7->a5 for black: score -1
+        . e5->g7 for red: score 1
+    . e7->f6 for black: score -2
+. c3->e5 for red: score 0

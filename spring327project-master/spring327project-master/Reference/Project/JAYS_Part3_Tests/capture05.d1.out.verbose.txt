@@ -1,0 +1,8 @@
+? d4->b6 for red:
+. d4->b6 for red: score 99
+? f6->e7 for red:
+    . c5->e3 for black: score 0
+. f6->e7 for red: score 0
+? f6->g7 for red:
+    . c5->e3 for black: score 0
+. f6->g7 for red: score 0

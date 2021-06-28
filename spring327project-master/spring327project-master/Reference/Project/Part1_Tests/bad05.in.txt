@@ -1,0 +1,11 @@
+RULES:      no capture multiple jumps
+TURN:       red
+BOARD:
+" b " b " b " b
+b " b " b " b " 
+" b " b " b " b 
+. " . " . " . " 
+" . " . " . " .
+r " r " r " r " 
+" r " r " r " r 
+r " r " 

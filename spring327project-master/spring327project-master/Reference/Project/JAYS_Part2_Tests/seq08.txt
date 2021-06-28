@@ -1,0 +1,35 @@
+# Start of a game
+
+RULES:
+    no capture      # Don’t enforce the rule that pieces must be captured
+    single jumps      # Allow multiple jumps
+
+TURN:
+    red
+BOARD:
+
+" | . | " | b | " | b | " | b
+---+---+---+---+---+---+---+---
+r | " | b | " | b | " | b | "
+---+---+---+---+---+---+---+---
+" | b | " | b | " | b | " | b
+---+---+---+---+---+---+---+---
+. | " | . | " | . | " | . | "
+---+---+---+---+---+---+---+---
+" | . | " | . | " | . | " | .
+---+---+---+---+---+---+---+---
+r | " | r | " | r | " | r | "
+---+---+---+---+---+---+---+---
+" | r | " | r | " | r | " | b
+---+---+---+---+---+---+---+---
+r | " | r | " | r | " | . | "
+
+# move to become king, move back to OG spot, and then back to king spot
+MOVES:
+a7->b8
+h2->g1
+b8->a7
+g1->h2
+a7->b8
+h2->g1
+

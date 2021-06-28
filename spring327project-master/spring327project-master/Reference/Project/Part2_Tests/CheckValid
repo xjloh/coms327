@@ -1,0 +1,135 @@
+#!/bin/bash
+
+Usage()
+{
+  echo " "
+  echo "Usage: $0 [-I] test1 test2 ..."
+  echo " "
+  echo "Runs test files and compares output."
+  echo "Assumes change executable is in current working directory."
+  echo "If -I switch is given, produces instructor output files."
+  echo " "
+}
+
+#
+# Arg1: input file
+# Arg2: output file
+#
+stripInput()
+{
+  sed 's/#.*$//' $1 | tr '_' ' ' | sed 's/[A-Z]*:/&_\
+/g' | sed 's/MOVES:/_MOVES:/' | sed 's/BOARD:/\
+BOARD:/' | sed '/BOARD:/,/MOVES:/y/-+|/   /' | sed 's/no[ ]*capture/no_capture_/' | sed 's/single[ ]*jumps/single_jumps_/' | sed 's/multiple[ ]*jumps/multiple_jumps_/' | sed 's/red/red_/' | sed 's/black/black_/' | sed 's/\([a-z:A-Z1-8]+\) /&_/g' | tr -d ' \t\n' | tr '_' ' ' > $2
+  echo "" >> $2
+}
+
+#
+# Remove any trailing spaces.
+#
+# Arg1: input file, will be modified
+#
+stripTrailingSpaces()
+{
+  sed 's/ *$//' $1 > $1.new
+  mv -f $1.new $1
+}
+
+
+#
+# Grab extra args from input file
+#
+extraArgs()
+{
+  head -n 1 $1 | grep '^##' | tr -d '#'
+}
+
+#
+# Demonstrate a file
+# Arg1: what we're showing
+# Arg2: filename
+#
+demonstrateFile()
+{
+  printf "$1:\n"
+  echo "==========================================================================="
+  cat $2
+  echo "==========================================================================="
+}
+
+#
+# Arg1: input file
+#
+buildOutputs()
+{
+  args=`extraArgs $1`
+  bn=`basename -s .txt $1`
+  echo Running change $1 $args
+  ./change $1 $args -e $bn.exchange_raw.txt -h $bn.human.txt > $bn.stdout.txt
+  stripTrailingSpaces $bn.stdout.txt
+  stripInput $bn.exchange_raw.txt $bn.exchange.txt
+  stripTrailingSpaces $bn.human.txt
+  rm $bn.exchange_raw.txt
+}
+
+#
+# Arg1: input file
+#
+checkOutputs()
+{
+  args=`extraArgs $1`
+  echo Running: change $1 $args
+  ./change $1 $args -e student.exchange_raw.txt -h student.human.txt > student.stdout.txt
+
+  printf "    Checking stdout....: "
+  bn=`basename -s .txt $1`
+  delta=`diff -b -q $bn.stdout.txt student.stdout.txt`
+  if [ -z "$delta" ]; then
+    printf "matches\n"
+  else
+    printf "different!\n"
+    demonstrateFile "Instructor output" $bn.stdout.txt
+    demonstrateFile "Student output" student.stdout.txt
+  fi
+
+  printf "    Checking exchange..: "
+  stripInput student.exchange_raw.txt student.exchange.txt
+  delta=`diff -q --strip-trailing-cr $bn.exchange.txt student.exchange.txt`
+  if [ -z "$delta" ]; then
+    printf "matches\n"
+  else
+    printf "different!\n"
+    demonstrateFile "Instructor exchange (collapsed)" $bn.exchange.txt
+    demonstrateFile "Student exchange (collapsed)" student.exchange.txt
+  fi
+
+  printf "    Checking human.....: "
+  stripTrailingSpaces student.human.txt
+  delta=`diff -q --strip-trailing-cr $bn.human.txt student.human.txt`
+  if [ -z "$delta" ]; then
+    printf "matches\n"
+  else
+    printf "different!\n"
+    demonstrateFile "Instructor human" $bn.human.txt
+    demonstrateFile "Student human" student.human.txt
+  fi
+
+  rm student.stdout.txt student.exchange_raw.txt student.exchange.txt student.human.txt
+}
+
+
+if [ $# -lt 1 ]; then
+  Usage
+  exit 0
+fi
+
+if [ "$1" == "-I" ]; then
+  shift
+  for file; do
+    buildOutputs $file
+  done
+else
+  for file; do
+    checkOutputs $file
+  done
+fi
+

@@ -1,0 +1,17 @@
+RULES:
+no capture
+multiple jumps
+TURN:
+black
+BOARD:
+#abcdefgh
+ ".".".".#8
+ ."r"r"."#7
+ "B".".".#6
+ ."r"."r"#5
+ ".".".".#4
+ ."."r"r"#3
+ ".".".".#2
+ ."."."."#1
+MOVES:
+b6->d8->f6->h4->f2->d4->b6

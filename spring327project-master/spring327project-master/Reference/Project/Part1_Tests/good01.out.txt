@@ -1,0 +1,5 @@
+VALID INPUT
+Initial configuration:
+Turn: red
+Red: 0 kings, 12 pawns
+Black: 0 kings, 12 pawns

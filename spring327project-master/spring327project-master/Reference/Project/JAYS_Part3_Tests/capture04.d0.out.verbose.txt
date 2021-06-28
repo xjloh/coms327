@@ -1,0 +1,4 @@
+. c5->b4 for black: score 1
+. e3->d2 for black: score 1
+. e3->f2 for black: score 1
+. e3->f4 for black: score 1

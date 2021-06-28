@@ -1,0 +1,2 @@
+. c5->b4 for black: score 0
+. c5->e3 for black: score 99

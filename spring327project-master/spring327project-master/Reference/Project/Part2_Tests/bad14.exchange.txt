@@ -1,0 +1,1 @@
+RULES: no capture single jumps TURN: black BOARD: ".".".".."b"."."".".".".."b".".""."r".".."."."."".".".".."."."." MOVES: c5->b3

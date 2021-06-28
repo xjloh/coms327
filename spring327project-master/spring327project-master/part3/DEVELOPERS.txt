@@ -1,0 +1,29 @@
+Features implemented by Xin Jun Loh
+Makefile
+- creates the new executable called winnable.
+
+int isWinnable(int depth, Cards tabl[7][20], char foundation[4][2], Stock* stock, Waste* waste);
+-return 1 if it satisfies the winning condition, 0 otherwise.
+
+int validateMove(char src, char dest, Cards tabl[7][20], char foundation[4][2], Stock* stock, Waste* waste);
+- return 1 if its a valid move, 0 otherwise by scanning tableau, foundation, stock, and waste cards.
+
+Config executeMove(char src, char dest, Config config);
+-executes the moves and returns the new game configuration.
+
+Moves* getAllOriginMoves(Config config);
+-return all possbile moves from a game configuration.
+
+Config findWinnable(int depth, Config config, char src, char dest, int print);
+- recursive function that executes the moves, calls getAllOriginMoves and iterate that list of new moves from the new game configuration which then calls findWinnable, the process repeats itself untill the base case is satisfied.
+
+Features implemented by Wei Xian Lim :
+
+Int foudRankCheck(char foud, char input):
+- input the given rank of the foundation card and input card and check if the rank is 
+  correct.
+
+Int tablRankSuitCheck(char lRank, char lSuit, char rRank, char rSuit):
+- input the given rank and suit of the source column and the destination column to check if the rank and suit are correct. 
+
+ 

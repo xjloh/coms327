@@ -1,0 +1,31 @@
+RULES:      no capture multiple jumps
+TURN:       red
+BOARD:
+# invalid character
+#" a " b " b " b
+
+# 3 red spaces in a row
+#" . " b " " " b
+
+# wrong carry value for next row
+#" b " b " b " b
+#" " b " b " b "
+
+
+# wrong carry value for next row
+#" b " b " b " b
+#b " b " b " b "
+#. b " b " b " b
+
+#flipped board
+#b | b | b | " | b | " | b | "
+
+# ERROR FIX! 3 black tiles in a row
+# b | . | b | " | b | " | b | "
+
+#b | " | b | " | b | " | b | "
+
+
+
+
+MOVES:      e3->d4  b6->c5  d4->b6

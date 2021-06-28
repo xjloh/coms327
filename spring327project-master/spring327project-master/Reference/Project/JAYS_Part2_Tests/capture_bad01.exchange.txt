@@ -1,0 +1,1 @@
+RULES: capturesingle jumps TURN: red BOARD: ".".".".."b"."."".".".".."b"."."".".".".."."b".""."."r".."."."." MOVES: f2->g3

@@ -1,0 +1,31 @@
+# Start of a game
+
+RULES:
+    no capture      # Don’t enforce the rule that pieces must be captured
+    multiple jumps      # Allow multiple jumps
+
+TURN:
+    red
+BOARD:
+
+" | b | " | b | " | b | " | b
+---+---+---+---+---+---+---+---
+b | " | b | " | b | " | b | "
+---+---+---+---+---+---+---+---
+" | b | " | b | " | b | " | b
+---+---+---+---+---+---+---+---
+. | " | . | " | . | " | . | "
+---+---+---+---+---+---+---+---
+" | . | " | . | " | . | " | .
+---+---+---+---+---+---+---+---
+r | " | r | " | r | " | r | "
+---+---+---+---+---+---+---+---
+" | r | " | r | " | r | " | r
+---+---+---+---+---+---+---+---
+r | " | r | " | r | " | r | "
+
+MOVES:
+
+# Red           black
+e3->d4->c5 # no jumps, moving diagonal to the left, error
+

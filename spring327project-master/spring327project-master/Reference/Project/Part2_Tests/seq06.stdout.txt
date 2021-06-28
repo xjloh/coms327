@@ -1,0 +1,3 @@
+Input file has 16 moves
+Processing 16 moves
+Move 16 is illegal: c7->b6

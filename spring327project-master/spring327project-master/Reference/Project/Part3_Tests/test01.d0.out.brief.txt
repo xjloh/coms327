@@ -1,0 +1,2 @@
+d4->b6 for red: score 0
+d4->e5 for red: score -1

@@ -1,0 +1,3 @@
+Input file has 1 moves
+Processing 1 moves
+Move 1 is illegal: b6->d8->f6->d4->b6->a7

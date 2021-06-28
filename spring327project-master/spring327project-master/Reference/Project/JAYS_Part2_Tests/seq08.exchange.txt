@@ -1,0 +1,1 @@
+RULES: no capture single jumps TURN: red BOARD: "R"b"b"b."b"b"b""b"b"b"b."."."."".".".".r"r"r"r""r"r"r".r"r"r"B" MOVES: 

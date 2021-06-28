@@ -1,0 +1,8 @@
+? f2->e1 for black:
+    . e7->d8 for red: score 0
+    . e7->f8 for red: score 0
+. f2->e1 for black: score 0
+? f2->g1 for black:
+    . e7->d8 for red: score 0
+    . e7->f8 for red: score 0
+. f2->g1 for black: score 0

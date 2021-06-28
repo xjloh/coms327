@@ -1,0 +1,20 @@
+#RULES:no capturemultiple jumps
+#RULES:no capturemultiplejumps
+#RULES:no capture multiple jumps
+#RULES: no capture
+
+#multiple jumps
+#RULS:
+RULES:no capturemultile jumps
+
+TURN:       red
+BOARD:
+" b " b " b " b
+b " b " b " b "
+" b " b " b " b
+. " . " . " . "
+" . " . " . " .
+r " r " r " r "
+" r " r " r " r
+r " r " r " r "
+MOVES:      e3->d4  b6->c5  d4->b6

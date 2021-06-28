@@ -1,0 +1,57 @@
+Features implemented by Xin Jun Loh 
+checkRank(char c)
+-return 1 if the given 'c' is a rank, return 0 otherwise.
+
+checkFormat(FILE* fp)
+-check the formats of the file, prints error whenever there is a format error.
+
+void getFCards(FILE *fp)
+-get cards from foundation and convert it into char array.
+
+void getTCards(FILE *fp)
+-get cards from tableau and convert it into char array.
+
+void getSCards(FILE *fp)
+-get cards from stock and convert it into char array.
+
+int isSuit(char c)
+-checks whether the given character is a suit, returns 1 if 'c' is a suit, returns 0 otherwise.
+
+int rankChecker(char fc, char tc)
+-compares the rank order between foundation card(fc) and tableau card(tc)
+-returns 1 if fc is bigger or equal to tc, returns 0 otherwise
+
+char findNextCard(char fc)
+-returns the following rank of a given card rank.
+
+void findDup()
+-find duplicates within foundation, tableau, and stock.
+
+void findMiss()
+-find missing cards within foundation, tableau, and stock
+
+
+Features implemented by Wei Xian Lim 
+getCovered()
+- method return the number of covered card from the input file
+
+
+getWaste()
+- method return the number of waste card from the input file
+
+
+getStock()
+- method return the number of stok card form the input file
+
+
+checkTabl()
+- method check the tableau pile to make sure the input card on the pile are correct with the format given
+
+
+getData()
+- method insert all the data into their individual array to be run by other methods
+
+
+printValid()
+- return an output of a valid input
+

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ `whoami` != "asminer" ]; then
+  echo "This is a script used by the instructor, to update"
+  echo "all the files in this directory."
+  exit 1
+fi
+
+cp $HOME/Courses-git/C_and_C++/Project-checkers/Part3-tests/CheckValid .
+cp $HOME/Courses-git/C_and_C++/Project-checkers/Part3-tests/test??.d?.* .

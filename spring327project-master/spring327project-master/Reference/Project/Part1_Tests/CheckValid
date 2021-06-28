@@ -1,0 +1,75 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+  echo " "
+  echo "Usage: $0 file1.in.txt file2.in.txt ..."
+  echo " "
+  echo "Runs executable ./info in the current working directory,"
+  echo "on each of the specified input files.  Compares your output"
+  echo "to the output in the corresponding output file (change in.txt"
+  echo "to out.txt) and summarizes any differences."
+  echo "Also checks that standard error is empty."
+  echo " "
+  exit 1
+fi
+
+summary=`mktemp`
+
+echo " " > $summary
+echo "============================================================" >> $summary
+echo "Summary of tests" >> $summary
+echo "============================================================" >> $summary
+echo " " >> $summary
+printf "%-14s    %-14s    %-20s\n" "standard input" "standard error" "input file" >> $summary
+printf "%-14s    %-14s    %-20s\n" "--------------" "--------------" "--------------------" >> $summary
+
+checkinput()
+{
+  infile="$1"
+  echo "============================================================"
+  echo "Checking $infile"
+  echo "============================================================"
+  outfile=`basename -s .in.txt $infile`.out.txt
+  if [ ! -f $outfile ]; then
+    echo '    Missing ' $outfile
+    return
+  fi
+
+  myout=`mktemp`
+  myerr=`mktemp`
+
+  ./info < $infile > $myout 2> $myerr
+
+  delta=`diff -b $outfile $myout` 
+
+  if [ "" != "$delta" ]; then
+    echo "Differences in output: "
+    echo "$delta"
+    printf "%-14s    " "[ different ]" >> $summary
+  else
+    echo "Standard output looks good."
+    printf "%-14s    " "[  matched  ]" >> $summary
+  fi   
+
+
+  if [ -s $myerr ]; then
+    echo "Standard error (should be empty): "
+    cat $myerr
+    printf "%-14s    " "[ not empty ]" >> $summary
+  else
+    echo "Standard error is empty (as it should be)."
+    printf "%-14s    " "[   empty   ]" >> $summary
+  fi
+
+  rm -f $myout $myerr
+
+  printf "$infile\n" >> $summary
+}
+
+
+for file; do
+  checkinput $file
+done
+cat $summary
+rm -f $summary
+echo " "

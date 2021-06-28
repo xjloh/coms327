@@ -1,0 +1,22 @@
+#
+# An almost won game
+#
+RULES: 
+turn 1 
+limit 1   # one more waste pile reset
+
+FOUNDATIONS:  
+Ac 2d Jh Ts
+
+TABLEAU:
+Td | 8d
+| 6d 5c 4d 3c
+| Kd Qs
+| 9c
+| Ks Qd Js
+| Kc Qh Jc
+| Kh Qc Jd Tc 9d 8c 7d 6c 5d 4c 3d 2c
+
+STOCK: 7c |
+
+MOVES:
