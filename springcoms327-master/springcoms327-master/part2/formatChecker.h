@@ -1,0 +1,1 @@
+void checkFormat(FILE *fp);
